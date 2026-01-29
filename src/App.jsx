@@ -1,11 +1,23 @@
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import "./App.css";
-import { Button } from "@/components/ui/button"
+import AppLayout from "./layout/AppLayout";
+import LandingPage from "./Pages/LandingPage";
 
 const App = () => {
+  const router = createBrowserRouter([
+    {
+      element: <AppLayout />,
+      children: [
+        {
+          path: '/',
+          element: <LandingPage />
+        }
+        
+      ]
+    }
+  ])
   return(
-  <div>
-   <Button variant="destructive">Button</Button>
-  </div>
+  <RouterProvider router={router}/>
   )
 }
 
