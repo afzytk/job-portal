@@ -1,9 +1,10 @@
 import "./App.css";
+import { Button } from "@/components/ui/button"
 
 const App = () => {
   return(
   <div>
-    <h1>Job Portal</h1>
+   <Button variant="destructive">Button</Button>
   </div>
   )
 }
