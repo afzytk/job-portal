@@ -7,7 +7,14 @@ import {
 } from "@/components/ui/carousel";
 import companies from "../data/companies.json";
 import Autoplay from "embla-carousel-autoplay";
+import faqs from "../data/faqs.json";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
 
 const LandingPage = () => {
   return (
@@ -75,6 +82,17 @@ const LandingPage = () => {
             Post jobs, manage applications, and find the best candidates
           </CardContent>
         </Card>
+
+        <Accordion collapsible>
+          {faqs.map((faq, index) => {
+            return (
+              <AccordionItem key={index} value={`item-${index + 1}`}>
+                <AccordionTrigger>{faq.question}</AccordionTrigger>
+                <AccordionContent>{faq.answer}</AccordionContent>
+              </AccordionItem>
+            );
+          })}
+        </Accordion>
       </section>
       {/* Accordion */}
     </main>
